@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi perfil</title>
+</head>
+<body>
+    <h1>Perfil autenticado</h1>
+    <h2 th:text="${nombre}">Nombre</h2>
+    <p>Correo: <span th:text="${correo}"></span></p>
+    <p>ID OIDC: <span th:text="${identificador}"></span></p>
+    <img th:if="${foto != null}" th:src="${foto}"
+         alt="Foto de perfil" width="100">
+    <form th:action="@{/logout}" method="post">
+        <button type="submit">Cerrar sesión</button>
+    </form>
+</body>
+</html>
